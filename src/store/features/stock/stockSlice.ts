@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 export const stockSlice = createApi({
   reducerPath: 'stock',
-  baseQuery: fetchBaseQuery({baseUrl: process.env.API_URL}),
+  baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com/'}),
   endpoints: builder => ({
     getListOfStocks: builder.query({
       query: (search: string) => {
