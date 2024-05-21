@@ -12,7 +12,7 @@ export const ProductContent = ({products}: ProductContentProps) => {
   return (
     <>
       <Text style={styles.text}>Total: {products?.length} Product (s)</Text>
-      <CardProductList products={products} height={700} />
+      <CardProductList products={products} />
     </>
   );
 };
@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     fontSize: 18,
     color: COLOR.black_color,
+    paddingBottom: 20,
   },
 });

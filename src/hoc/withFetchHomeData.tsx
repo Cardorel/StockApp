@@ -4,6 +4,7 @@ import {COLOR} from '../constants/COLORS.ts';
 
 interface WithFetchHomeDataProps {
   isLoading: boolean;
+  hasError: boolean;
 }
 
 export const withFetchHomeData =
@@ -14,6 +15,12 @@ export const withFetchHomeData =
         <View style={styles.container}>
           <ActivityIndicator color={COLOR.secondary_color} />
           <Text style={styles.text}>Loading data...</Text>
+        </View>
+      );
+    } else if (props.hasError) {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.text}>Something went wrong...</Text>
         </View>
       );
     }

@@ -47,7 +47,7 @@ export const CardProduct = ({
           <Text numberOfLines={1} style={styles.title}>
             {title}
           </Text>
-          <Rating rating={rating}/>
+          <Rating rating={rating} />
         </View>
         <View style={styles.priceContent}>
           <Text style={styles.price}>
@@ -62,9 +62,7 @@ export const CardProduct = ({
 
 const styles = StyleSheet.create({
   cardContent: {
-    flex: 1,
-    padding: 10,
-    height: '100%',
+    width: '46%',
   },
   title: {
     fontSize: 16,

@@ -7,7 +7,12 @@ import {useSpecialOffer} from '../hooks/useSpecialOffer.ts';
 
 export const HomeScreen = () => {
   const search = useAppSelector(selectSearch);
-  const {isLoading} = useProducts(search);
-  const {isLoadingSpecialOffer} = useSpecialOffer('');
-  return <Home isLoading={isLoading && isLoadingSpecialOffer} />;
+  const {isLoading, isError} = useProducts(search);
+  const {isLoadingSpecialOffer, isErrorSpecialOffer} = useSpecialOffer('');
+  return (
+    <Home
+      isLoading={isLoading && isLoadingSpecialOffer}
+      hasError={isErrorSpecialOffer && isError}
+    />
+  );
 };

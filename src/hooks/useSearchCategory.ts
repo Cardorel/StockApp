@@ -3,7 +3,7 @@ import {NativeSyntheticEvent, TextInputChangeEventData} from 'react-native';
 import {useCategories} from './useCategories.ts';
 
 export const useSearchCategory = () => {
-  const {data, isCategoryLoading} = useCategories();
+  const {data, isCategoryLoading, isError} = useCategories();
   const [search, setSearch] = useState('');
 
   const handleSearch = (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
@@ -18,5 +18,5 @@ export const useSearchCategory = () => {
     [data, search],
   );
 
-  return {filteredData, search, handleSearch, isCategoryLoading};
+  return {filteredData, search, handleSearch, isCategoryLoading, isError};
 };

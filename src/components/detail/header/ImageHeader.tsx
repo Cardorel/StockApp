@@ -50,10 +50,10 @@ export const ImageHeader = ({images, title}: ImageHeaderProps) => {
             color={COLOR.white_color}
           />
         </Pressable>
-        <Text numberOfLines={1} style={styles.title}>
+        <Text numberOfLines={1} style={[styles.title, styles.flex]}>
           {title}
         </Text>
-        <View style={styles.share_favorite}>
+        <View style={[styles.share_favorite]}>
           <Icon name="heart-outline" size={30} color={COLOR.secondary_color} />
           <Icon
             name="share-social-outline"
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width,
-    height: 500,
+    height: 350,
     resizeMode: 'contain',
   },
   headerContent: {
@@ -93,10 +93,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     position: 'absolute',
+    gap: 20,
     top: 10,
     left: 0,
     zIndex: 1,
     padding: 20,
+    flex: 1,
   },
   share_favorite: {
     flexDirection: 'row',
@@ -119,17 +121,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   title: {
-    fontSize: 25,
+    fontSize: 20,
     color: COLOR.black_color,
     textAlign: 'center',
     backgroundColor: 'rgba(255, 255, 255,0.4)',
@@ -142,5 +136,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
+  },
+  flex: {
+    flex: 1,
   },
 });

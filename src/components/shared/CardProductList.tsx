@@ -1,27 +1,29 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {CardProduct} from './CardProduct.tsx';
 import {ProductInterface} from '../../interface/Stock.ts';
 
 interface CardProductProps {
   products: ProductInterface[];
-  height?: number;
 }
 
-const containerStyle = {
-  paddingBottom: 50,
-};
-
-export const CardProductList = ({products, height = 350}: CardProductProps) => {
+export const CardProductList = ({products}: CardProductProps) => {
   return (
-    <FlatList
-      data={products}
-      keyExtractor={item => item.id.toString()}
-      numColumns={2}
-      style={{height}}
-      contentContainerStyle={containerStyle}
-      showsVerticalScrollIndicator={false}
-      renderItem={({item}) => <CardProduct {...item} />}
-    />
+    <View style={styles.list}>
+      {products?.map(product => (
+        <CardProduct key={product.id} {...product} />
+      ))}
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    alignItems: 'center',
+    gap: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    width: '100%',
+  },
+});
