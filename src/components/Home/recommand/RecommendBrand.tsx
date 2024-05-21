@@ -8,7 +8,7 @@ interface RecommendBrandProps {
 }
 
 export const RecommendBrand = ({brands}: RecommendBrandProps) => {
-  const {selectedBrand, handleSelectedId} = useRecommendBrand();
+  const {handleSelectedId, selectedBrand} = useRecommendBrand();
   return (
     <View style={styles.container}>
       <FlatList
