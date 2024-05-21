@@ -20,7 +20,7 @@ export const Recommend = () => {
         headingText="Recommended For You"
       />
       <RecommendBrand brands={brands} />
-      <CardProductList products={data?.products} />
+      <CardProductList products={data} />
     </>
   );
 };

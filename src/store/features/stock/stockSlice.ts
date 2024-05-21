@@ -5,17 +5,8 @@ export const stockSlice = createApi({
   baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com/'}),
   endpoints: builder => ({
     getListOfStocks: builder.query({
-      query: (search: string) => {
-        if (search.toLowerCase() === 'all') {
-          return 'products';
-        } else {
-          return {
-            url: 'products/search',
-            params: {
-              q: search,
-            },
-          };
-        }
+      query: () => {
+        return 'products';
       },
     }),
     getProductById: builder.query({
