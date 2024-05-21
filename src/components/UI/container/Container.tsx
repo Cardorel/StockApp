@@ -1,13 +1,14 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import type {PropsWithChildren} from 'react';
 
 export const Container = ({children}: PropsWithChildren) => {
-  return <View style={styles.container}>{children}</View>;
+  return <ScrollView style={styles.container}>{children}</ScrollView>;
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    marginVertical: 20,
+    height: '100%',
   },
 });
